@@ -1,3 +1,7 @@
+# Link to lab07 URL:
+<https://ucsb-cs56-f19.github.io/lab07-luciusluo/>
+
+
 A simple Spring Boot webapp using:
 * Thymeleaf templating
 * Pulling in Bootstrap from CDN.
