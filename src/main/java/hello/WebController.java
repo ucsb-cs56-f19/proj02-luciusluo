@@ -13,6 +13,9 @@ import java.util.HashMap;
 
 import com.nimbusds.oauth2.sdk.client.ClientReadRequest;
 
+import hello.geojson.FeatureCollection;
+
+
 @Controller
 public class WebController {
 
@@ -75,6 +78,8 @@ public class WebController {
         // TODO: Actually do the search here and add results to the model
         String json = e.getJSON(eqSearch.getDistance(), eqSearch.getMinmag());
         model.addAttribute("json", json);
+	FeatureCollection featureCollection = FeatureCollection.fromJSON(json);
+        model.addAttribute("featureCollection",featureCollection);
         return "earthquakes/results";
     }
 
