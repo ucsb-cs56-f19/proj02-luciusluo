@@ -46,6 +46,8 @@
                     <th>Type</th>
                     <th>Url</th>
                     <th>Count</th>
+	            <th>Title</th>
+		    <th>API</th>
                 </tr>
             </thead>
             <tbody>
@@ -53,7 +55,8 @@
                     <td th:text="${featureCollection.type}"></td>
                     <td th:text="${featureCollection.metadata.url}"></td>
                     <td th:text="${featureCollection.metadata.count}"></td>
-
+		    <td th:text="${featureCollection.metadata.title}"></td>
+                    <td th:text="${featureCollection.metadata.api}"></td>
                 </tr>
             </tbody>
         </table>
