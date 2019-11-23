@@ -13,16 +13,12 @@ import hello.entities.AppUser;
 import hello.repositories.UserRepository;
 import hello.controllers.UsersController;
 
-
+@Entity
 @ControllerAdvice
 public class AuthControllerAdvice {
 
-    @Autowired
+    @Autowired   
     private MembershipService membershipService;
-
-    @Autowired
-    private UserRepository userRepository;
-
 
     @ModelAttribute("isLoggedIn")
     public boolean getIsLoggedIn(OAuth2AuthenticationToken token){
@@ -30,7 +26,7 @@ public class AuthControllerAdvice {
     }
 
     @ModelAttribute("id")
-    public String getUid(OAuth2AuthenticationToken token) {
+    public String getUid(OAuth2AuthenticationToken token){
         if (token == null) return "";
 
         String uid = token.getPrincipal().getAttributes().get("id").toString();
@@ -41,7 +37,7 @@ public class AuthControllerAdvice {
             AppUser u = new AppUser();
             u.setUid(uid);
             u.setLogin(token2login(token));
-            userRepository.save(u);
+            u.userRepository.save(u);
         }
 
         return uid;
