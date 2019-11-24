@@ -3,7 +3,7 @@ Github Page Link: <https://ucsb-cs56-f19.github.io/lab07-luciusluo/>
 
 Heroku App Link: <https://cs56-f19-lab07-luciusluo.herokuapp.com/>
 
-Travis-IC Link: <https://cs56-f19-lab07-luciusluo.herokuapp.com/>
+Travis-IC Link: <https://travis-ci.org/ucsb-cs56-f19/lab07-luciusluo>
 
 A simple Spring Boot webapp using:
 * Thymeleaf templating
