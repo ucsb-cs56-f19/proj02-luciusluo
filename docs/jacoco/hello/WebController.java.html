@@ -59,21 +59,27 @@ import hello.geojson.FeatureCollection;
 <span class="fc" id="L59">        return &quot;earthquakes/search&quot;;</span>
     }
     
+    /* Added for users navigator
+    @GetMapping(&quot;/users&quot;)
+    public String getUsers(Model model, OAuth2AuthenticationToken oAuth2AuthenticationToken,
+            EqSearch eqSearch) {
+        return &quot;users/index&quot;;
+    }*/
 
      @GetMapping(&quot;/earthquakes/results&quot;)
     public String getEarthquakesResults(Model model, OAuth2AuthenticationToken oAuth2AuthenticationToken,
             EqSearch eqSearch) {
 
-<span class="nc" id="L67">        EarthquakeQueryService e =</span>
+<span class="nc" id="L73">        EarthquakeQueryService e =</span>
            new EarthquakeQueryService();
 
-<span class="nc" id="L70">        model.addAttribute(&quot;eqSearch&quot;, eqSearch);</span>
+<span class="nc" id="L76">        model.addAttribute(&quot;eqSearch&quot;, eqSearch);</span>
         // TODO: Actually do the search here and add results to the model
-<span class="nc" id="L72">        String json = e.getJSON(eqSearch.getDistance(), eqSearch.getMinmag());</span>
-<span class="nc" id="L73">        model.addAttribute(&quot;json&quot;, json);</span>
-<span class="nc" id="L74">	FeatureCollection featureCollection = FeatureCollection.fromJSON(json);</span>
-<span class="nc" id="L75">        model.addAttribute(&quot;featureCollection&quot;,featureCollection);</span>
-<span class="nc" id="L76">        return &quot;earthquakes/results&quot;;</span>
+<span class="nc" id="L78">        String json = e.getJSON(eqSearch.getDistance(), eqSearch.getMinmag());</span>
+<span class="nc" id="L79">        model.addAttribute(&quot;json&quot;, json);</span>
+<span class="nc" id="L80">	FeatureCollection featureCollection = FeatureCollection.fromJSON(json);</span>
+<span class="nc" id="L81">        model.addAttribute(&quot;featureCollection&quot;,featureCollection);</span>
+<span class="nc" id="L82">        return &quot;earthquakes/results&quot;;</span>
     }
 
 }
