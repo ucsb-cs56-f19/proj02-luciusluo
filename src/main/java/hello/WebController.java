@@ -59,6 +59,12 @@ public class WebController {
         return "earthquakes/search";
     }
     
+    /* Added for users navigator
+    @GetMapping("/users")
+    public String getUsers(Model model, OAuth2AuthenticationToken oAuth2AuthenticationToken,
+            EqSearch eqSearch) {
+        return "users/index";
+    }*/
 
      @GetMapping("/earthquakes/results")
     public String getEarthquakesResults(Model model, OAuth2AuthenticationToken oAuth2AuthenticationToken,
