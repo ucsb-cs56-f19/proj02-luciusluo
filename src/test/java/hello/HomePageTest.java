@@ -56,7 +56,7 @@ public class HomePageTest {
 
 
     @Test
-    public void getHomePage_hasCorrectTitle() throws Exception {
+    public void getUsersPage_hasCorrectTitle() throws Exception {
         mvc.perform(MockMvcRequestBuilders.get("/").accept(MediaType.TEXT_HTML))
                 .andExpect(status().isOk())
                 .andExpect(xpath("//title").exists())
@@ -64,7 +64,7 @@ public class HomePageTest {
     }
 
     @Test
-    public void getHomePage_hasCorrectBrand() throws Exception {
+    public void getUsersPage_hasCorrectBrand() throws Exception {
         mvc.perform(MockMvcRequestBuilders.get("/").accept(MediaType.TEXT_HTML))
                 .andExpect(status().isOk())
                 .andExpect(xpath("/html/body/div/nav/a").exists())
