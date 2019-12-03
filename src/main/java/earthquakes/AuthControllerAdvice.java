@@ -1,4 +1,4 @@
-package hello;
+package earthquakes;
 
 import java.util.List;
 import javax.persistence.Entity;
@@ -9,10 +9,11 @@ import org.springframework.security.oauth2.client.authentication.OAuth2Authentic
 import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 
-import hello.entities.AppUser;
-import hello.repositories.UserRepository;
-import hello.controllers.UsersController;
+import earthquakes.entities.AppUser;
+import earthquakes.repositories.UserRepository;
+import earthquakes.controllers.UsersController;
 
+import earthquakes.services.MembershipService;
 
 @ControllerAdvice
 public class AuthControllerAdvice {

@@ -1,17 +1,17 @@
-package hello.controllers;
+package earthquakes.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import hello.entities.AppUser;
-import hello.repositories.UserRepository;
+import earthquakes.entities.AppUser;
+import earthquakes.repositories.UserRepository;
 
 @Controller
 public class UsersController {
 
-    
+    @Autowired
     private UserRepository userRepository;
 
     @Autowired
