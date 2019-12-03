@@ -13,6 +13,7 @@ import hello.entities.AppUser;
 import hello.repositories.UserRepository;
 import hello.controllers.UsersController;
 
+import hello.services.MembershipService;
 
 @ControllerAdvice
 public class AuthControllerAdvice {
