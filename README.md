@@ -1,4 +1,4 @@
-# Link to lab07 URL:
+# Link to proj01 URL:
 Github Page Link: <https://ucsb-cs56-f19.github.io/proj01-luciusluo/>
 
 Heroku App Link: <https://cs56-f19-proj01-luciusluo.herokuapp.com/>
