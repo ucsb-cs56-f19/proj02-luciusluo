@@ -1,7 +1,5 @@
 package earthquakes.controllers;
 
-import earthquakes.services.LocationQueryService;
-import earthquakes.searches.LocSearch;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
 import org.springframework.security.oauth2.client.registration.ClientRegistration;
@@ -15,7 +13,10 @@ import java.util.HashMap;
 
 import com.nimbusds.oauth2.sdk.client.ClientReadRequest;
 
-import earthquakes.geojson.FeatureCollection;
+import earthquakes.osm.Place;
+import earthquakes.services.LocationQueryService;
+import earthquakes.searches.LocSearch;
+import java.util.List;
 
 
 @Controller
@@ -43,8 +44,8 @@ public class LocationsController {
         // TODO: Actually do the search here and add results to the model
         String json = e.getJSON(locSearch.getLocation());
         model.addAttribute("json", json);
-	FeatureCollection featureCollection = FeatureCollection.fromJSON(json);
-        model.addAttribute("featureCollection",featureCollection);
+        List<Place> place = Place.listFromJSON(json);
+        model.addAttribute("place",place);
         return "locations/results";
     }
 
