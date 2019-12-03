@@ -11,7 +11,7 @@ import hello.repositories.UserRepository;
 @Controller
 public class UsersController {
 
-    
+    @Autowired
     private UserRepository userRepository;
 
     @Autowired
