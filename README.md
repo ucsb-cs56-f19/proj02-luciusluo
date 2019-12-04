@@ -1,9 +1,9 @@
-# Link to proj01 URL:
-Github Page Link: <https://ucsb-cs56-f19.github.io/proj01-luciusluo/>
+# Link to proj02 URL:
+Github Page Link: <https://ucsb-cs56-f19.github.io/proj02-luciusluo/>
 
-Heroku App Link: <https://cs56-f19-proj01-luciusluo.herokuapp.com/>
+Heroku App Link: <https://cs56-f19-proj02-luciusluo.herokuapp.com/>
 
-Travis-IC Link: <https://travis-ci.org/ucsb-cs56-f19/proj01-luciusluo>
+Travis-IC Link: <https://travis-ci.com/ucsb-cs56-f19/proj02-luciusluo>
 
 A simple Spring Boot webapp using:
 * Thymeleaf templating
