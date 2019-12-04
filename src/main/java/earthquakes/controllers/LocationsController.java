@@ -48,5 +48,6 @@ public class LocationsController {
         model.addAttribute("place",place);
         return "locations/results";
     }
+    
 
 }
