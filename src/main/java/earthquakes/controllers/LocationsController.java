@@ -8,6 +8,7 @@ import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import java.util.Map;
 import java.util.HashMap;
 
@@ -55,7 +56,7 @@ public class LocationsController {
     }
     
     
-    @GetMapping("/locations/index")
+    @GetMapping("/locations")
     public String index(Model model, OAuth2AuthenticationToken token) {
         String uid = token.getPrincipal().getAttributes().get("id").toString();
         Iterable<Location> locations= locationRepository.findByUid(uid);
@@ -64,5 +65,22 @@ public class LocationsController {
     }
     
     
+    @PostMapping("/locations/add")
+      public String add(Location location, Model model, OAuth2AuthenticationToken token) {
+        String uid = token.getPrincipal().getAttributes().get("id").toString();
+        location.setUid(uid);
+        locationRepository.save(location);
+        model.addAttribute("locations", locationRepository.findAll());
+        return "locations/index";
+      }
+    
+    @DeleteMapping("/locations/delete/{id}")
+    public String delete(@PathVariable("id") long id, Model model) {
+        Location location = locationRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Invalid courseoffering Id:" + id));
+        locationRepository.delete(location);
+        model.addAttribute("locations", locationRepository.findAll());
+        return "locations/index";
+    }
     
 }
