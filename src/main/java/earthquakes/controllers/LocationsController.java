@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import java.util.Map;
 import java.util.HashMap;
 
@@ -20,6 +21,8 @@ import earthquakes.searches.LocSearch;
 import earthquakes.entities.Location;
 import earthquakes.repositories.LocationRepository;
 import java.util.List;
+
+import org.springframework.web.bind.annotation.PathVariable;
 
 
 @Controller
